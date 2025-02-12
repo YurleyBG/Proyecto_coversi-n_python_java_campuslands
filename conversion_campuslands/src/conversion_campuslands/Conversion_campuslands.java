@@ -240,24 +240,46 @@ public class Conversion_campuslands {
                     boolean bool1=true;
                     while(bool1){
                         System.out.println("___BIENVENIDO AL MODULO TRAINER_____");
-                        campuslands.menutrainer();
-                        int opccoor1=0;
-                        System.out.println("Ingrese la opcion que desea ver:");
-                        opccoor1=scanner.nextInt();
-                        switch(opccoor1){
-                            case 1:
-                                  System.out.println("______RUTAS Y HORARIOS____");
-                            break;
-                            case 2:
-                                  System.out.println("______ACTUALIZAR DATOS____");
-                            break;
-                            case 3:
-                                System.out.println("Regresando...");
-                                scanner.nextLine();
-                                bool1=false;
-                                break;
-       
+                       
+                           String user;
+                            String Contraseña; 
+
+                            System.out.println("Ingrese el usuario por favor:");
+                            scanner.nextLine();
+                            user = scanner.nextLine(); 
+                            System.out.println("Ingrese la contraseña por favor:");
+                            Contraseña = scanner.nextLine(); 
+                        boolean encontrado = false;
+                        for (Trainer i :TrainerArray) {
+                            if(user.equals(i.userT) && Contraseña.equals(i.contraseñaT)){
+                                encontrado = true;
+                                campuslands.menutrainer();
+                                int opccoor1=0;
+                                System.out.println("Ingrese la opcion que desea ver:");
+                                opccoor1=scanner.nextInt();
+                                switch(opccoor1){
+                                    case 1:
+                                          System.out.println("______RUTAS Y HORARIOS____");
+                                    break;
+                                    case 2:
+                                          System.out.println("______ACTUALIZAR DATOS____");
+                                    break;
+                                    case 3:
+                                        System.out.println("Regresando...");
+                                        scanner.nextLine();
+                                        bool1=false;
+                                        break;
+
+                                }
+                                
+                            }
+                            
+                            
                         }
+                        if (!encontrado) {
+                            System.out.println("Este usuario y contraseña no son correctos");
+                        }
+                        
                          
                     }
                 break;
