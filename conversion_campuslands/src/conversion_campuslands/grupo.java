@@ -93,6 +93,8 @@ public class grupo {
     
     }
     public static class Trainer {
+        private static int contadorid1 = 1;
+        
         int idT ;
         String nombreT;
         String ApellidoT;
@@ -102,10 +104,10 @@ public class grupo {
         int telefonoT;
         String RutaT;
         
-        public Trainer (int idT ,String nombreT,String ApellidoT,String userT,
+        public Trainer (String nombreT,String ApellidoT,String userT,
         String contraseñaT,int EdadT,int telefonoT,String RutaT){
 
-            this.idT = idT;
+            this.idT = contadorid1++;
             this.nombreT = nombreT;
             this.ApellidoT = ApellidoT;
             this.userT = userT;
@@ -134,15 +136,17 @@ public class grupo {
         }
     }
     public static class coordinador {
-    int idC ;
-    String nombreC;
-    String ApellidoC;
-    int EdadC;
-    String SedeC;
+        private static int contador2=1; 
+        
+        int idC ;
+        String nombreC;
+        String ApellidoC;
+        int EdadC;
+        String SedeC;
 
-        public coordinador (int idC ,String nombreC,String ApellidoC,int EdadC,String SedeC){
+        public coordinador (String nombreC,String ApellidoC,int EdadC,String SedeC){
 
-            this.idC = idC;
+            this.idC = contador2;
             this.nombreC = nombreC;
             this.ApellidoC = ApellidoC;
             this.EdadC = EdadC;
@@ -208,35 +212,6 @@ public class grupo {
           
         }
     }
-    public static class Registro_de_Entrada  {
-    int idRE ;
-    String fecha_entrada;
-    String actividades_realizadas;
-    String estado;
-
-        public Registro_de_Entrada (int idRE ,String fecha_entrada,String actividades_realizadas,String estado){
-
-            this.idRE = idRE;
-            this.fecha_entrada = fecha_entrada;
-            this.actividades_realizadas = actividades_realizadas;
-            this.estado = estado;
-        
-        } 
-
-        @Override
-        public String toString() {
-            StringBuilder concatenacionRE = new StringBuilder();
-            concatenacionRE.append("Trainers:\n")
-                .append("id: ").append(idRE).append("\n")
-                .append("Nombre: ").append(fecha_entrada).append("\n")
-                .append("Apellido: ").append(actividades_realizadas).append("\n")
-                .append("Usuario: ").append(estado).append("\n");
-             
-            
-            return concatenacionRE.toString();
-
-          
-        }
-    }
+    
 }
 
