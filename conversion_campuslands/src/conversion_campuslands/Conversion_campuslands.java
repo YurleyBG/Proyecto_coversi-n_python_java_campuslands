@@ -18,7 +18,8 @@ public class Conversion_campuslands {
         System.out.println("2. AGREGAR.");
         System.out.println("3. ACTUALIZAR.");
         System.out.println("4. ELIMINAR.");
-        System.out.println("5. Salir");
+        System.out.println("5. AGREGAR NOTAS");
+        System.out.println("6. SALIR");
         System.out.println("_______________________");
     }
    
@@ -42,12 +43,12 @@ public class Conversion_campuslands {
         
         
         ArrayList<estudiantes> estudiantesArray = new ArrayList<>();
-        estudiantesArray.add(new estudiantes("yurley", "botello", 17, "10-call 3", "ana", 300346789, "cursando", "bajo", new HashMap<>()));
-        estudiantesArray.add(new estudiantes( "luis", "caicedo", 19, "13-call 6", "luis", 300728393, "cursando", "bajo", new HashMap<>()));
-        estudiantesArray.add(new estudiantes("pablo", "contreras", 23, "10-call 4", "pedro", 312467832, "cursando", "bajo", new HashMap<>()));
-        estudiantesArray.add(new estudiantes( "maria", "sandoval", 21, "11-call 6", "Maria", 316783426, "cursando", "bajo", new HashMap<>()));
-        estudiantesArray.add(new estudiantes("camilo", "suarez", 18, "14-call 7", "camilo", 302426389, "cursando", "bajo", new HashMap<>()));
-        estudiantesArray.add(new estudiantes( "sofia", "suarez", 19, "1-call 6", "sofia", 332758393, "cursando", "bajo", new HashMap<>()));
+        estudiantesArray.add(new estudiantes(1,"yurley", "botello", 17, "10-call 3", "ana", 300346789, "cursando", "bajo", new HashMap<>()));
+        estudiantesArray.add(new estudiantes( 2,"luis", "caicedo", 19, "13-call 6", "luis", 300728393, "cursando", "bajo", new HashMap<>()));
+        estudiantesArray.add(new estudiantes(3,"pablo", "contreras", 23, "10-call 4", "pedro", 312467832, "cursando", "bajo", new HashMap<>()));
+        estudiantesArray.add(new estudiantes( 4,"maria", "sandoval", 21, "11-call 6", "Maria", 316783426, "cursando", "bajo", new HashMap<>()));
+        estudiantesArray.add(new estudiantes(5,"camilo", "suarez", 18, "14-call 7", "camilo", 302426389, "cursando", "bajo", new HashMap<>()));
+        estudiantesArray.add(new estudiantes( 6,"sofia", "suarez", 19, "1-call 6", "sofia", 332758393, "cursando", "bajo", new HashMap<>()));
         
         
         
@@ -58,12 +59,12 @@ public class Conversion_campuslands {
        
         
         ArrayList<Trainer> TrainerArray = new ArrayList<>();
-        TrainerArray.add( new Trainer( "pedro", "caceres", "pedro", "p123", 20, 32122312, "t1"));
-        TrainerArray.add(new Trainer( "michael", "rodriguez", "michael", "m123", 27, 32122567, "t2"));
-        TrainerArray.add(new Trainer( "orbin", "contreras", "orbin", "o123", 30, 321224562, "t3"));
+        TrainerArray.add( new Trainer( 1,"pedro", "caceres", "pedro", "p123", 20, 32122312, "t1"));
+        TrainerArray.add(new Trainer( 2,"michael", "rodriguez", "michael", "m123", 27, 32122567, "t2"));
+        TrainerArray.add(new Trainer( 3,"orbin", "contreras", "orbin", "o123", 30, 321224562, "t3"));
         
         ArrayList<coordinador> coordinadorArray = new ArrayList<>();
-        coordinadorArray.add(new coordinador("stiven", "carvajal", 23, "tibu"));
+        coordinadorArray.add(new coordinador(1,"stiven", "carvajal", 23, "tibu"));
      
         ArrayList<ingreso> ingresoArray = new ArrayList<>();
         ingresoArray.add( new ingreso(11,"jesus", "bustamante", 17, "23-cal13", "ingrid", 32416782,"progreso de ingreso"));
@@ -182,15 +183,8 @@ public class Conversion_campuslands {
                         switch(opccoor){
                             case 1:
                                 System.out.println("______INGRESAR CAMPERS NUEVOS_____");
-                                int idecita=1;
-                                int idecitaa=1;
-                                for (int i = 0; i < estudiantesArray.size(); i++) {
-                                    
-                                   estudiantes estudiante = estudiantesArray.get(i);
-                                   idecita = estudiante.id = i+2; 
-                                    
-                                    
-                                }                          
+                                   
+                                int ideee=0;
                                 String nameNEWCAMPER="";
                                 String surnameNEWCAMPER="";
                                 int ageNEWCAMPER=0;
@@ -199,7 +193,11 @@ public class Conversion_campuslands {
                                 int numphoneNEWCAMPER=0;
                                 String estadoNEWCAMPER="progreso de ingreso";
                                 String riesgoNEWCAMPER="";
-
+                                
+                                
+                                System.out.println("ingrese la id :");
+                                ideee=scanner.nextInt();
+                                scanner.nextLine();
                                 System.out.println("ingrese la edad del camper:");
                                     ageNEWCAMPER=scanner.nextInt();
                                      scanner.nextLine();
@@ -211,10 +209,10 @@ public class Conversion_campuslands {
                                     direNEWCAMPER=scanner.nextLine();
                                 System.out.println("ingrese el nombre del acuduiente del camper:");
                                     acuNEWCAMPER=scanner.nextLine();
-                                System.out.println("ingrese el numero de telefon del camper:");
+                                System.out.println("ingrese el numero de telefono del camper:");
                                     numphoneNEWCAMPER=scanner.nextInt();
 
-                                ingreso Ingreso = new ingreso(idecita,nameNEWCAMPER, surnameNEWCAMPER, ageNEWCAMPER, direNEWCAMPER,  acuNEWCAMPER, numphoneNEWCAMPER,estadoNEWCAMPER);
+                                ingreso Ingreso = new ingreso(ideee,nameNEWCAMPER, surnameNEWCAMPER, ageNEWCAMPER, direNEWCAMPER,  acuNEWCAMPER, numphoneNEWCAMPER,estadoNEWCAMPER);
                                 ingresoArray.add(Ingreso);
 
                                  System.out.println("El Camper se agrego correctamente..");
@@ -224,12 +222,8 @@ public class Conversion_campuslands {
                             break;
                             case 2:
                                 System.out.println("______INGRESAR TRAINER NUEVOS_____");
-                                int idecita1=1;
-                                for (int i = 1; i < TrainerArray.size(); i++) {
-                                   Trainer trainerss = TrainerArray.get(i);
-                                   idecita1 = trainerss.idT = i ;  
-
-                                }                          
+                              
+                                int idee=0;
                                 String nameNEWTRAINER="";
                                 String surnameNEWTRAINER="";
                                 String passNEWTRAINER="";
@@ -238,7 +232,9 @@ public class Conversion_campuslands {
                                 int ageNEWTRAINER=0;
                                 String grupoNEWTRAINER="";
                              
-                                
+                                System.out.println("ingrese la id :");
+                                idee=scanner.nextInt();
+                                scanner.nextLine();
                                 System.out.println("ingrese el nombre del trainerr:");
                                 scanner.nextLine();
                                 nameNEWTRAINER=scanner.nextLine();
@@ -248,14 +244,14 @@ public class Conversion_campuslands {
                                 passNEWTRAINER=scanner.nextLine();
                                 System.out.println("ingrese el usuario del trainer:");
                                 userNEWTRAINER=scanner.nextLine();
-                                System.out.println("ingrese el numero de telefon del trainer:");
+                                System.out.println("ingrese el numero de telefono del trainer:");
                                 numphoneNEWTRAINER=scanner.nextInt();
                                 System.out.println("ingrese la edad del trainers:");
                                 ageNEWTRAINER=scanner.nextInt();
                                 System.out.println("ingrese el grupo :");
                                 grupoNEWTRAINER=scanner.nextLine();
                                 System.out.println("");
-                                Trainer trainer = new Trainer( nameNEWTRAINER, surnameNEWTRAINER, userNEWTRAINER, passNEWTRAINER, ageNEWTRAINER, numphoneNEWTRAINER, grupoNEWTRAINER);
+                                Trainer trainer = new Trainer( idee, nameNEWTRAINER, surnameNEWTRAINER, userNEWTRAINER, passNEWTRAINER, ageNEWTRAINER, numphoneNEWTRAINER, grupoNEWTRAINER);
                                 TrainerArray.add(trainer);
 
                                 System.out.println("El Trainer se agrego correctamente..");
@@ -263,18 +259,16 @@ public class Conversion_campuslands {
                             break;
                             case 3:
                                  System.out.println("______INGRESAR COORDINADOR NUEVOS_____");
-                                int idecita2=1;
-                                for (int i = 1; i < coordinadorArray.size(); i++) {
-                                   coordinador coordinadorr = coordinadorArray.get(i);
-                                   idecita2 = coordinadorr.idC = i ;  
-
-                                }                          
+                                 
+                                int ide=0;
                                 String nameNEWCOORDI="";
                                 String surnameNEWCOORDI="";
                                 int ageNEWCOORDI=0;
                                 String sedeNEWCOORDI="";
                              
-                                
+                                System.out.println("ingrese la id del coordinador:");
+                                ide=scanner.nextInt();
+                                scanner.nextLine();
                                 System.out.println("ingrese el nombre del coordinador:");
                                 scanner.nextLine();
                                 nameNEWCOORDI=scanner.nextLine();
@@ -287,7 +281,7 @@ public class Conversion_campuslands {
                                 sedeNEWCOORDI=scanner.nextLine();
                                 System.out.println("");
                                 
-                                coordinador Coordinador = new coordinador( nameNEWCOORDI, surnameNEWCOORDI, ageNEWCOORDI, sedeNEWCOORDI);
+                                coordinador Coordinador = new coordinador(ide, nameNEWCOORDI, surnameNEWCOORDI, ageNEWCOORDI, sedeNEWCOORDI);
                                 coordinadorArray.add(Coordinador);
 
                                 System.out.println("El coordinador se agrego correctamente.."); 
@@ -562,11 +556,57 @@ public class Conversion_campuslands {
                     }
                 break;
                 case 5:
+                    
+                    boolean repetir=true;
+                    while(repetir){
+                        
+                        System.out.println("-------AGREGAR NOTA CAMPERS INGRESO------");
+                        System.out.println("ingrese la id del camper a agregar notas:");
+                        int idCam = scanner.nextInt();
+                        boolean camperEncontrado = false;
+                        for (ingreso ing : ingresoArray) {
+                            camperEncontrado = true;
+                            if (ing.idI == idCam) {
+                                repetir = false;
+                                double notaTeorica = 0;
+                                double notaPractica = 0;
+                                double notaTrabajos = 0;
+                                double notafinal = 0;
+                                String newEstado;
+
+                                System.out.println("Ingrese la nota teórica:");
+                                notaTeorica = scanner.nextDouble();
+
+                                System.out.println("Ingrese la nota práctica:");
+                                notaPractica = scanner.nextDouble();
+
+                                System.out.println("Ingrese la nota de trabajos:");
+                                notaTrabajos = scanner.nextDouble();
+
+                                notafinal = notaTeorica * 0.3 + notaPractica * 0.6 + notaTrabajos * 0.1;
+
+                                if (notafinal >= 60) {
+                                    newEstado = "Aprobado";
+                                    estudiantes nuevoEstudiante = new estudiantes(ing.idI, ing.nombreI, ing.ApellidosI, ing.EdadI, ing.DireccionI,
+                                        ing.AcudienteI, ing.telefonoI, newEstado, "bajo", new HashMap<>());
+                                    estudiantesArray.add(nuevoEstudiante);
+
+                                    ingresoArray.remove(ing);
+                                    break;
+                                }
+                            } 
+                        }
+                        if (camperEncontrado == false) {
+                            System.out.println("Camper no encontrado");
+                        }
+                    }
+                      
+                break;
+                case 6:
                     System.out.println("Haz anbandonado la plataforma campuslands,Hasta la proxima. :)");
                     booleanito=false;
                 break;
             }
-            
            
         }
     }

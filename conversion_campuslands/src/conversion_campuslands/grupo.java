@@ -70,10 +70,10 @@ public class grupo {
         Map<String, Object> modulosCursados;
         
         
-        public estudiantes (String nombre,String Apellidos,int Edad,
+        public estudiantes (int id, String nombre,String Apellidos,int Edad,
         String Direccion,String Acudiente,int telefono,String Estado,String Riesgo,Map<String, Object> modulosCursados){
 
-            this.id = contadorid++;
+            this.id = id;
             this.nombre = nombre;
             this.Apellidos = Apellidos;
             this.Edad = Edad;
@@ -93,7 +93,7 @@ public class grupo {
     
     }
     public static class Trainer {
-        private static int contadorid1 = 1;
+        
         
         int idT ;
         String nombreT;
@@ -104,10 +104,10 @@ public class grupo {
         int telefonoT;
         String RutaT;
         
-        public Trainer (String nombreT,String ApellidoT,String userT,
+        public Trainer (int idT,String nombreT,String ApellidoT,String userT,
         String contraseñaT,int EdadT,int telefonoT,String RutaT){
 
-            this.idT = contadorid1++;
+            this.idT =idT ;
             this.nombreT = nombreT;
             this.ApellidoT = ApellidoT;
             this.userT = userT;
@@ -136,7 +136,6 @@ public class grupo {
         }
     }
     public static class coordinador {
-        private static int contador2=1; 
         
         int idC ;
         String nombreC;
@@ -144,9 +143,9 @@ public class grupo {
         int EdadC;
         String SedeC;
 
-        public coordinador (String nombreC,String ApellidoC,int EdadC,String SedeC){
+        public coordinador (int idC,String nombreC,String ApellidoC,int EdadC,String SedeC){
 
-            this.idC = contador2;
+            this.idC = idC;
             this.nombreC = nombreC;
             this.ApellidoC = ApellidoC;
             this.EdadC = EdadC;
